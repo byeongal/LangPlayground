@@ -12,6 +12,12 @@ lines_after_imports = 2
 multi_line_output = 3
 use_parentheses = true
 
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+version_files = ["pyproject.toml:version"]
+tag_format = "$version"
+update_changelog_on_bump = true
 
 [tool.poetry]
 name = "lang-playgroud"
@@ -23,10 +29,12 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 fastapi = "^0.108.0"
-uvicorn = {extras = ["standard"], version = "^0.25.0"}
+uvicorn = { extras = ["standard"], version = "^0.25.0" }
 langchain = "^0.0.353"
 openai = "^1.6.1"
 loguru = "^0.7.2"
+pypdf = "^3.17.4"
+python-multipart = "^0.0.6"
 
 
 [tool.poetry.group.dev.dependencies]

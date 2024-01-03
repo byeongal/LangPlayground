@@ -8,10 +8,12 @@ from loguru import logger
 from lang_playground.common.aop.auth import get_api_key
 from lang_playground.common.error import include_exception_handler
 from lang_playground.common.resp import BaseApiResp
+from lang_playground.routers import router
 
 
 app = FastAPI()
 include_exception_handler(app)
+app.include_router(router)
 
 
 @app.get("/models")
