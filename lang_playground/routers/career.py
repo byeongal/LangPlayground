@@ -34,7 +34,7 @@ async def upload_resume(
     try:
         documents = await load_pdf(await file.read())
         pdf_contents = "".join([document.page_content for document in documents])
-        logger.info(f"PDF contents: {pdf_contents}")
+        logger.info(f"PDF contents length: {len(pdf_contents)}")
         # FIXME: api_key 넣을 수 있는 다른 방법 리서치 하기
         os.environ["OPENAI_API_KEY"] = api_key
         v1_resume = await parse_resume(pdf_contents, model=model)

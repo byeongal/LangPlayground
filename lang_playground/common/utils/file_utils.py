@@ -11,8 +11,8 @@ async def load_pdf(contents: bytes) -> List[Document]:
     try:
         with NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
             temp_file.write(contents)
-            temp_file_path = temp_file.name
-            pdf_loader = PyPDFLoader(file_path=temp_file_path)
+        temp_file_path = temp_file.name
+        pdf_loader = PyPDFLoader(file_path=temp_file_path)
         return pdf_loader.load()
     except Exception as e:
         raise e

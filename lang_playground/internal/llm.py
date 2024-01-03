@@ -42,7 +42,6 @@ Extract the information according to the given format and constraints.
                 "human",
                 command_prompt,
             ),
-            ("human", "Tip: "),
         ]
     )
 
